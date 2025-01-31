@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udupi Tourism</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #9ba8ab ;
+        }
+        header {
+            background-color: #06141b ;
+            color: white;
+            text-align: center;
+            padding: 5px;
+            font-size: 24px;
+        }
+        .container {
+            padding: 20px;
+        }
+        .scroll-container {
+            display: flex;
+            align-items: center;
+        }
+        .scroll-btn {
+            background-color: #253745;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .scrollable {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            white-space: nowrap;
+            gap: 10px;
+            width: 90%;
+        }
+        .place-item, .food-item {
+            position: relative;
+            width: 300px;
+            margin: 10px;
+            cursor: pointer;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .place-item img, .food-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .details {
+            display: none;
+            background: whitesmoke;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+        }
+        .contacts {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .contacts button {
+            background-color: #4a5c6a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .gallery {
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+        }
+        .gallery img {
+            max-width: 50%;
+            border-radius: 10px;
+        }
+         .toolbar {
+            display: flex;
+            gap: 15px;
+        }
+        .toolbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: lighter;
+            padding: 5px 10px;
+            transition: 0.3s;
+        }
+        .toolbar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+        section {
+            padding: 5px;
+            min-height: 10vh;
+        }
+        .logo{
+            font-size: 24px;
+            font-weight: bold;
+        }
+         nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+        nav ul li {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+     <header>
+        <div class="logo">UDUPI TOURISM</div>
+        <nav class="toolbar">
+            <ul>
+                <li><a href="#places">Places to Visit</a></li>
+                <li><a href="#food">Must Try Food</a></li>
+                <li><a href="#contacts">Important Contacts</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <h3 style="font-family: sans-serif;"><center>Udupi is a coastal town in Karnataka, known for the Sri Krishna Temple,<br> Udupi cuisine, and beautiful beaches like Malpe. <br>It is also home to Manipal, a major educational hub. <br>The town is a mix of spirituality, learning, and nature.<br><br> Ready to explore?</center></h3>
+    <div class="container">
+        <section id="places">
+        <h2><center>Places to Visit</center></h2>
+        <div class="scroll-container">
+            <button class="scroll-btn" onclick="scrollLeft('places')">&#10094;</button>
+            <div id="places" class="scrollable">
+                
+                <div class="place-item" onclick="toggleDetails('place1-details')">
+                    <img src="km.jpeg" alt="Sri Krishna Temple">
+                    <p><b>Sri Krishna Temple</b></p>
+                    <p>A famous temple dedicated to Lord Krishna.</p>
+                    <div id="place1-details" class="details">
+                        <p>A serene temple known for its <br>rich heritage.</p>
+                        <a href="https://maps.google.com" target="_blank">View on Google Maps</a>
+                        <button onclick="toggleDetails('place1-details')">Hide</button>
+                    </div>
+                </div>
+
+                <div class="place-item" onclick="toggleDetails('place2-details')">
+                    <img src="malpe.jpeg" alt="Malpe Beach">
+                    <p><b>Malpe Beach</b></p>
+                    <p>A beautiful beach with water sports.</p>
+                    <div id="place2-details" class="details">
+                        <p>Golden sand beach with adventurous<br> water sports.</p>
+                        <a href="https://maps.google.com" target="_blank">View on Google Maps</a>
+                        <button onclick="toggleDetails('place2-details')">Hide</button>
+                    </div>
+                </div>
+
+                <div class="place-item" onclick="toggleDetails('place3-details')">
+                    <img src="st.jpeg" alt="St. Mary's Island">
+                    <p><b>St. Mary's Island</b></p>
+                    <p>Small islands with unique rock<br> formations.</p>
+                    <div id="place3-details" class="details">
+                        <p>Famous for its hexagonal rock <br>formations.</p>
+                        <a href="https://maps.google.com" target="_blank">View on Google Maps</a>
+                        <button onclick="toggleDetails('place3-details')">Hide</button>
+                    </div>
+                </div>
+
+                <div class="place-item" onclick="toggleDetails('place4-details')">
+                    <img src="barkur.jpeg" alt="Barkur">
+                    <p><b>Barkur</b></p>
+                    <p>A historic place with old temples and ruins.</p>
+                    <div id="place4-details" class="details">
+                        <p>Ruins of an ancient port town<br> with rich history.</p>
+                        <a href="https://maps.google.com" target="_blank">View on Google Maps</a>
+                        <button onclick="toggleDetails('place4-details')">Hide</button>
+                    </div>
+                </div>
+
+                <div class="place-item" onclick="toggleDetails('place5-details')">
+                    <img src="arbi.jpeg" alt="arbi">
+                    <p><b>Arbi Falls</b></p>
+                    <p>A small waterfall near Manipal</p>
+                    <div id="place5-details" class="details">
+                        <p>Best to visit during monsoon</p>
+                        <a href="https://maps.google.com" target="_blank">View on Google Maps</a>
+                        <button onclick="toggleDetails('place5-details')">Hide</button>
+                    </div>
+                </div>
+
+            </div>
+            <button class="scroll-btn" onclick="scrollRight('places')">&#10095;</button>
+        </div>
+        <section id="food">
+        <h2><center>Must Try Food</center></h2>
+        <div class="scroll-container">
+            <button class="scroll-btn" onclick="scrollLeft('foods')">&#10094;</button>
+            <div id="foods" class="scrollable">
+                <div class="food-item">
+                    <img src="dosa.jpeg" alt="Food 1">
+                    <p><b>Masala Dosa</b></p>A crispy, golden dosa stuffed <br> with a flavorful potato filling, served with <br> chutney and sambar.</p>
+                </div>
+                <div class="food-item">
+                    <img src="idli.jpeg" alt="Food 1">
+                    <p><b>Idli-Sambar</b></p>Soft steamed rice cakes served <br> with spicy sambar and coconut chutney.</p>
+                </div>
+                <div class="food-item">
+                    <img src="gb.jpeg" alt="Food 1">
+                    <p><b>Gudbud</b></p>A popular Udupi dessert made with<br> layers of different ice cream flavors,<br> fruits, jelly, and nuts</p>
+                </div>
+                <div class="food-item">
+                    <img src="goli.jpeg" alt="Food 1">
+                    <p><b>Goli Baje</b></p>Deep-fried, fluffy fritters made from<br> maida (refined flour), yogurt, and spices.</p>
+                </div>
+                <div class="food-item">
+                    <img src="mgb.jpeg" alt="Food 1">
+                    <p><b>Mangalore Buns</b></p>Sweet and soft banana puris,<br> best enjoyed with coconut chutney.</p>
+                </div>
+                <div class="food-item">
+                    <img src="nd.jpeg" alt="Food 1">
+                    <p><b>Neer Dosa</b></p>Thin, soft rice crepes served<br> with coconut chutney and curry.</p>
+                </div>
+            </div>
+            <button class="scroll-btn" onclick="scrollRight('foods')">&#10095;</button>
+        </div>
+    </section>
+        <section id="contacts">
+        <h2><center>Important Contacts</center></h2>
+        <div class="contacts">
+            <button onclick="location.href='emerg.html'">Emergency Contacts</button>
+            <button onclick="location.href='#'">Taxi & Auto</button>
+            <button onclick="location.href='#'">Local Guides</button>
+        </div>
+        </section>
+         <section id="gallery">
+        <h2><center>Gallery</center></h2>
+        <div class="gallery">
+            <img id="gallery-image" src="arbi.jpeg" alt="Gallery Image">
+        </div>
+    </div>
+    <script>
+        function toggleDetails(id) {
+            var element = document.getElementById(id);
+            element.style.display = element.style.display === 'block' ? 'none' : 'block';
+        }
+        function scrollLeft(id) {
+            document.getElementById(id).scrollBy({ left: -300, behavior: 'smooth' });
+        }
+        function scrollRight(id) {
+            document.getElementById(id).scrollBy({ left: 300, behavior: 'smooth' });
+        }
+        
+        let galleryIndex = 1;
+        const galleryImages = ["dosa.jpeg", "arbi.jpeg", "km.jpeg"];
+        function changeGalleryImage() {
+            document.getElementById("gallery-image").src = galleryImages[galleryIndex];
+            galleryIndex = (galleryIndex + 1) % galleryImages.length;
+        }
+        setInterval(changeGalleryImage, 1000);
+    </script>
+</section>
+</body>
+</html>
